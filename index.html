@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Skippo-Q</title>
+		<link rel="stylesheet" href="css/index.css">
+		<script src="https://use.fontawesome.com/5bb0aa3c76.js"></script>
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-104382714-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<div id="message"></div>
+		<div id="loader">
+			<div id="loader-gif">
+				<img src="./images/loader.gif"></div>
+			</div>
+		</div>
+		<div id="header-container">
+			<div id="header">
+				<div id="site-logo"><img src="./images/logo.png"></div>
+				<div id="site-caption">
+					<h1>Introducing Skippo-Q.</h1>
+					<h2>Increase your capacity, Grow your sales</h2>
+				</div>
+				<div id="sign-in">
+					<div id="input-title">
+						Bring Skippo - Q To Your Venue
+					</div>
+					<!-- This form is submited to the google sheet's script -->
+					<form id='gform' method='POST' action='https://script.google.com/macros/s/AKfycbwkZkO9GuI5GCwZdfq4qSuHfZU10mPbasXtaJV6uB03I4eT9qo/exec'>
+						<input type="text" name='name' placeholder="Name" required="">
+						<input type="tel" name='phone-num' placeholder="Phone Number" maxlength="10" required="">
+						<input type="email" name='email' placeholder="Email" required="">
+						<input type="text" name='venue' placeholder="Venue" required="">
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+		</div>
+			<div id="content-wrapper">
+				<div id="content">
+					<div id="site-intro">
+						<h1>About Skippo - Q</h1>
+						<p>Skippo is steroids for any venue's business. It allows them to manage their operation effectively, while helping them differentiate themselves by creating a delightful experence for their customers.</p>
+					</div>
+				</div>
+			</div>
+		<div id="site-features">
+				<div id="wrapper">
+					<h1>A Skippo - Q Experience Involves</h1>
+					<div id="line-management" class="feature-types">
+						<div class="symbol">
+							<i class="fa fa-anchor"></i>
+						</div>
+						<div class="symbol-heading">
+							Multiple Line Management
+						</div>
+					</div>
+					<div id="monitoring" class="feature-types">
+						<div class="symbol">
+							<i class="fa fa-briefcase"></i>
+						</div>
+						<div class="symbol-heading">
+							Real Time Monitoring
+						</div>
+					</div>
+					<div id="send-notification" class="feature-types">
+						<div class="symbol">
+							<i class="fa fa-comments"></i>
+						</div>
+						<div class="symbol-heading">
+							Send Notifications
+						</div>
+					</div>
+					<div id="clear queue" class="feature-types">
+						<div class="symbol">
+							<i class="fa fa-download"></i>
+						</div>
+						<div class="symbol-heading">
+							Download and Clear Queue
+						</div>
+					</div>
+				</div>
+		</div>
+		<div id="user-benefits">
+			<div id="advantage-wrapper">
+				<h1>Advantage for Your Business</h1>
+				<span>Having Skippo - Q holds many benefits for Business. Here are some of them:</span>
+				<p><i class="fa fa-angle-double-right"></i>Top-of-the-line queue management system free of charge. </p>
+				<p><i class="fa fa-angle-double-right"></i>
+				Manage traffic without hiring more staff.</p>
+				<p><i class="fa fa-angle-double-right"></i>
+				Make the work of customer service representatives and agents more efficient.</p>
+				<p><i class="fa fa-angle-double-right"></i>
+				Increase customer satisfaction by cutting down waiting times.</p>
+				<p><i class="fa fa-angle-double-right"></i>
+				Offer your customers and staff hassle-free interaaction.</p>
+				<p><i class="fa fa-angle-double-right"></i>
+				Learn about how many visitors your company's branches receive each day, and more valuable insights & information.</p>
+			</div>
+		</div>
+		<div id="contact-now">
+			<div id="contact-wrapper">
+				<h1>Get Your Efficient Queue Management System</h1>
+				<!-- <input type="submit" value="Contact Now"> -->
+				<span>Call (+91) 9958645750</span> <!--AKE-->
+			</div>
+		</div>
+		<div id="call-me">
+			<div id="call-wrapper">
+				<!-- <span>Have any questions? Call (+91) 9958645750</span> AKE -->
+				<span>All Rights Reserved @ 2017 Skippo</span>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function getFormData() {
+			  	var elements = document.getElementById("gform").elements;
+			  	var fields = Object.keys(elements).map(function(k) {
+
+			    if(elements[k].name !== undefined) {
+			      return elements[k].name;
+			    }else if(elements[k].length > 0){
+			      return elements[k].item(0).name;
+			    }
+			  }).filter(function(item, pos, self) {
+			    return self.indexOf(item) == pos && item;
+			  });
+			  var data = {};
+			  fields.forEach(function(k){
+			    data[k] = elements[k].value;
+			    var str = ""; // declare empty string outside of loop to allow
+			                  // it to be appended to for each item in the loop
+			    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
+			      str = str + elements[k].checked + ", "; // take the string and append
+			                                              // the current checked value to
+			                                              // the end of it, along with
+			                                              // a comma and a space
+			      data[k] = str.slice(0, -2); // remove the last comma and space
+			                                  // from the  string to make the output
+			                                  // prettier in the spreadsheet
+			    }else if(elements[k].length){
+			      for(var i = 0; i < elements[k].length; i++){
+			        if(elements[k].item(i).checked){
+			          str = str + elements[k].item(i).value + ", "; // same as above
+			          data[k] = str.slice(0, -2);
+			        }
+			      }
+			    }
+			  });
+				document.getElementById("loader").style.display = "block";
+			  return data;
+			}
+			function handleFormSubmit(event) {
+				event.preventDefault();
+
+				var data = getFormData();
+				var url = event.target.action;
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('POST', url);
+
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+				xhr.onreadystatechange = function() {
+						document.getElementById("loader").style.display = "none";
+				    var message = document.getElementById('message');
+				    message.style.display = 'block';
+
+				    message.innerHTML = 'Thank you for the information. Someone from our team will contact in 24 hours.';
+				    return;
+				};
+
+				var encoded = Object.keys(data).map(function(k) {
+				    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+				}).join('&')
+				xhr.send(encoded);
+			}
+
+			function loaded() {
+				var form = document.getElementById('gform');
+				form.addEventListener("submit", handleFormSubmit, false);
+			};
+
+			document.addEventListener('DOMContentLoaded', loaded, false);
+		</script>
+
+	</body>
+</html>
