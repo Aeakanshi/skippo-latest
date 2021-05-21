@@ -1,196 +1,221 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Skippo-Q</title>
-		<link rel="stylesheet" href="css/index.css">
-		<script src="https://use.fontawesome.com/5bb0aa3c76.js"></script>
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.css">
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+    <title>Spin & Act</title>
 
-		  ga('create', 'UA-104382714-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
-	</head>
-	<body>
-		<div id="message"></div>
-		<div id="loader">
-			<div id="loader-gif">
-				<img src="./images/loader.gif"></div>
-			</div>
-		</div>
-		<div id="header-container">
-			<div id="header">
-				<div id="site-logo"><img src="./images/logo.png"></div>
-				<div id="site-caption">
-					<h1>Introducing Skippo-Q.</h1>
-					<h2>Increase your capacity, Grow your sales</h2>
-				</div>
-				<div id="sign-in">
-					<div id="input-title">
-						Bring Skippo - Q To Your Venue
-					</div>
-					<!-- This form is submited to the google sheet's script -->
-					<form id='gform' method='POST' action='https://script.google.com/macros/s/AKfycbwkZkO9GuI5GCwZdfq4qSuHfZU10mPbasXtaJV6uB03I4eT9qo/exec'>
-						<input type="text" name='name' placeholder="Name" required="">
-						<input type="tel" name='phone-num' placeholder="Phone Number" maxlength="10" required="">
-						<input type="email" name='email' placeholder="Email" required="">
-						<input type="text" name='venue' placeholder="Venue" required="">
-						<input type="submit" value="Submit">
-					</form>
-				</div>
-			</div>
-		</div>
-			<div id="content-wrapper">
-				<div id="content">
-					<div id="site-intro">
-						<h1>About Skippo - Q</h1>
-						<p>Skippo is steroids for any venue's business. It allows them to manage their operation effectively, while helping them differentiate themselves by creating a delightful experence for their customers.</p>
-					</div>
-				</div>
-			</div>
-		<div id="site-features">
-				<div id="wrapper">
-					<h1>A Skippo - Q Experience Involves</h1>
-					<div id="line-management" class="feature-types">
-						<div class="symbol">
-							<i class="fa fa-anchor"></i>
-						</div>
-						<div class="symbol-heading">
-							Multiple Line Management
-						</div>
-					</div>
-					<div id="monitoring" class="feature-types">
-						<div class="symbol">
-							<i class="fa fa-briefcase"></i>
-						</div>
-						<div class="symbol-heading">
-							Real Time Monitoring
-						</div>
-					</div>
-					<div id="send-notification" class="feature-types">
-						<div class="symbol">
-							<i class="fa fa-comments"></i>
-						</div>
-						<div class="symbol-heading">
-							Send Notifications
-						</div>
-					</div>
-					<div id="clear queue" class="feature-types">
-						<div class="symbol">
-							<i class="fa fa-download"></i>
-						</div>
-						<div class="symbol-heading">
-							Download and Clear Queue
-						</div>
-					</div>
-				</div>
-		</div>
-		<div id="user-benefits">
-			<div id="advantage-wrapper">
-				<h1>Advantage for Your Business</h1>
-				<span>Having Skippo - Q holds many benefits for Business. Here are some of them:</span>
-				<p><i class="fa fa-angle-double-right"></i>Top-of-the-line queue management system free of charge. </p>
-				<p><i class="fa fa-angle-double-right"></i>
-				Manage traffic without hiring more staff.</p>
-				<p><i class="fa fa-angle-double-right"></i>
-				Make the work of customer service representatives and agents more efficient.</p>
-				<p><i class="fa fa-angle-double-right"></i>
-				Increase customer satisfaction by cutting down waiting times.</p>
-				<p><i class="fa fa-angle-double-right"></i>
-				Offer your customers and staff hassle-free interaaction.</p>
-				<p><i class="fa fa-angle-double-right"></i>
-				Learn about how many visitors your company's branches receive each day, and more valuable insights & information.</p>
-			</div>
-		</div>
-		<div id="contact-now">
-			<div id="contact-wrapper">
-				<h1>Get Your Efficient Queue Management System</h1>
-				<!-- <input type="submit" value="Contact Now"> -->
-				<span>Call (+91) 9958645750</span> <!--AKE-->
-			</div>
-		</div>
-		<div id="call-me">
-			<div id="call-wrapper">
-				<!-- <span>Have any questions? Call (+91) 9958645750</span> AKE -->
-				<span>All Rights Reserved @ 2017 Skippo</span>
-			</div>
-		</div>
+  <style type="text/css">
+    body {
+        background: #080808;
+        height: 900px;
+        width: 100%;
+    }
+ text{
+        font-family:Helvetica, Arial, sans-serif;
+        font-size:11px;
+        pointer-events:none;
+    }
+    #chart{
+        position: absolute;
+        width: 50%;
+        height: 500px;
+        top: 15%;
+        left: 35%;
+    }
+    #question{
+        position: absolute;
+        width: 34%;
+        height: 500px;
+        top: 10%;
+        right: 0;
+        /* left: 520px;*/
+    }
+    #question h1{
+        font-size: 42px;
+        font-weight: normal;
+        font-family: "sans-serif", Helvetica, Arial;
+        position: absolute;
+        color: orange;
+        padding: 0;
+        margin: 0;
+        right: 1em;
+        top:50%;
+        /*-webkit-transform:translate(0,-50%);
+                transform:translate(0,-50%);*/
+    }  
+      
+  </style>
 
-		<script type="text/javascript">
-			function getFormData() {
-			  	var elements = document.getElementById("gform").elements;
-			  	var fields = Object.keys(elements).map(function(k) {
+  </head>
+  
+  <body>
+    <div id="home" class="main-area">    
+      <div class="container"> 
+       <div id="chart"></div>
+    <div id="question"><h1></h1></div>
+    
+    
 
-			    if(elements[k].name !== undefined) {
-			      return elements[k].name;
-			    }else if(elements[k].length > 0){
-			      return elements[k].item(0).name;
-			    }
-			  }).filter(function(item, pos, self) {
-			    return self.indexOf(item) == pos && item;
-			  });
-			  var data = {};
-			  fields.forEach(function(k){
-			    data[k] = elements[k].value;
-			    var str = ""; // declare empty string outside of loop to allow
-			                  // it to be appended to for each item in the loop
-			    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
-			      str = str + elements[k].checked + ", "; // take the string and append
-			                                              // the current checked value to
-			                                              // the end of it, along with
-			                                              // a comma and a space
-			      data[k] = str.slice(0, -2); // remove the last comma and space
-			                                  // from the  string to make the output
-			                                  // prettier in the spreadsheet
-			    }else if(elements[k].length){
-			      for(var i = 0; i < elements[k].length; i++){
-			        if(elements[k].item(i).checked){
-			          str = str + elements[k].item(i).value + ", "; // same as above
-			          data[k] = str.slice(0, -2);
-			        }
-			      }
-			    }
-			  });
-				document.getElementById("loader").style.display = "block";
-			  return data;
-			}
-			function handleFormSubmit(event) {
-				event.preventDefault();
-
-				var data = getFormData();
-				var url = event.target.action;
-				var xhr = new XMLHttpRequest();
-
-				xhr.open('POST', url);
-
-				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-				xhr.onreadystatechange = function() {
-						document.getElementById("loader").style.display = "none";
-				    var message = document.getElementById('message');
-				    message.style.display = 'block';
-
-				    message.innerHTML = 'Thank you for the information. Someone from our team will contact in 24 hours.';
-				    return;
-				};
-
-				var encoded = Object.keys(data).map(function(k) {
-				    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-				}).join('&')
-				xhr.send(encoded);
-			}
-
-			function loaded() {
-				var form = document.getElementById('gform');
-				form.addEventListener("submit", handleFormSubmit, false);
-			};
-
-			document.addEventListener('DOMContentLoaded', loaded, false);
-		</script>
-
-	</body>
+      </div>             
+    </div>
+   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+   <script type="text/javascript">
+     var padding = {top:20, right:40, bottom:0, left:0},
+            w = 500 - padding.left - padding.right,
+            h = 500 - padding.top  - padding.bottom,
+            r = Math.min(w, h)/2,
+            rotation = 0,
+            oldrotation = 0,
+            picked = 100000,
+            oldpick = [],
+            color = d3.scale.category20();//category20c()
+            //randomNumbers = getRandomNumbers();
+        //http://osric.com/bingo-card-generator/?title=HTML+and+CSS+BINGO!&words=padding%2Cfont-family%2Ccolor%2Cfont-weight%2Cfont-size%2Cbackground-color%2Cnesting%2Cbottom%2Csans-serif%2Cperiod%2Cpound+sign%2C%EF%B9%A4body%EF%B9%A5%2C%EF%B9%A4ul%EF%B9%A5%2C%EF%B9%A4h1%EF%B9%A5%2Cmargin%2C%3C++%3E%2C{+}%2C%EF%B9%A4p%EF%B9%A5%2C%EF%B9%A4!DOCTYPE+html%EF%B9%A5%2C%EF%B9%A4head%EF%B9%A5%2Ccolon%2C%EF%B9%A4style%EF%B9%A5%2C.html%2CHTML%2CCSS%2CJavaScript%2Cborder&freespace=true&freespaceValue=Web+Design+Master&freespaceRandom=false&width=5&height=5&number=35#results
+        var data = [
+                    {"label":"",  "value":1,  "question":"Kajra Re, Kajra Re"}, // padding
+                    {"label":"",  "value":2,  "question":"Sing Haryanvi song"}, //font-family
+                    {"label":"",  "value":3,  "question":"Shayari"}, //color
+                    {"label":"",  "value":4,  "question":"Mimicry"}, //font-weight
+                    {"label":"",  "value":5,  "question":"Hindi Varnmala"}, //font-size
+                    {"label":"",  "value":6,  "question":"Sing a sad song with a laughing face."}, //background-color
+                    {"label":"",  "value":7,  "question":"Sanskrit shlok with hindi meaning"}, //nesting
+                    {"label":"",  "value":8,  "question":"Tell a PJ"}, //bottom
+                    {"label":"",  "value":9,  "question":"You Are Lucky"}, //sans-serif
+                    {"label":"", "value":10, "question":"Fill your mouth with water and sing a song."},
+                    {"label":"",  "value":11,  "question":"Try to lick your elbow while singing an alphabet"}, // padding
+                    {"label":"",  "value":12,  "question":"Movie dialog"}, //font-family
+                    {"label":"",  "value":13,  "question":"Translate these dialoude in English:1-जली को आग कहते हैं, बुझी को राख कहते हैं, जिस राख से बारूद बने, उसे विश्वनाथ करते हैं। /  2-एक चुटकी सिंदूर की कीमत तुम क्या जानो रमेश बाबू…ईश्वर का आशीर्वाद होता है, एक चुटकी सिंदूर…सुहागन के सर का ताज होता है, एक चुटकी सिंदूर…हर औरत का ख्वाब होता है. एक चुटकी सिंदूर…"},
+                    {"label":"",  "value":14,  "question":"Get a spoon in your mouth and Give your introduction"} //font-weight
+                
+        ];
+        var svg = d3.select('#chart')
+            .append("svg")
+            .data([data])
+            .attr("width",  w + padding.left + padding.right)
+            .attr("height", h + padding.top + padding.bottom);
+        var container = svg.append("g")
+            .attr("class", "chartholder")
+            .attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
+        var vis = container
+            .append("g");
+            
+        var pie = d3.layout.pie().sort(null).value(function(d){return 1;});
+        // declare an arc generator function
+        var arc = d3.svg.arc().outerRadius(r);
+        // select paths, use arc generator to draw
+        var arcs = vis.selectAll("g.slice")
+            .data(pie)
+            .enter()
+            .append("g")
+            .attr("class", "slice");
+            
+        arcs.append("path")
+            .attr("fill", function(d, i){ return color(i); })
+            .attr("d", function (d) { return arc(d); });
+        // add the text
+        arcs.append("text").attr("transform", function(d){
+                d.innerRadius = 0;
+                d.outerRadius = r;
+                d.angle = (d.startAngle + d.endAngle)/2;
+                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -14) +")";
+            })
+            .attr("text-anchor", "end")
+            .text( function(d, i) {
+                return data[i].label;
+            });
+        container.on("click", spin);
+        function spin(d){
+            
+            container.on("click", null);
+            //all slices have been seen, all done
+            console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+            if(oldpick.length == data.length){
+                console.log("done");
+                container.on("click", null);
+                return;
+            }
+            var  ps       = 360/data.length,
+                 pieslice = Math.round(1440/data.length),
+                 rng      = Math.floor((Math.random() * 1440) + 360);
+                
+            rotation = (Math.round(rng / ps) * ps);
+            
+            picked = Math.round(data.length - (rotation % 360)/ps);
+            picked = picked >= data.length ? (picked % data.length) : picked;
+            if(oldpick.indexOf(picked) !== -1){
+                d3.select(this).call(spin);
+                return;
+            } else {
+                oldpick.push(picked);
+            }
+            rotation += 90 - Math.round(ps/2);
+            vis.transition()
+                .duration(3000)
+                .attrTween("transform", rotTween)
+                .each("end", function(){
+                    //mark question as seen
+                    d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                        .attr("fill", "#111");
+                    //populate question
+                    d3.select("#question h1")
+                        .text(data[picked].question);
+                    oldrotation = rotation;
+              
+                    /* Get the result value from object "data" */
+                    console.log(data[picked].value)
+              
+                    /* Comment the below line for restrict spin to sngle time */
+                    container.on("click", spin);
+                });
+        }
+        //make arrow
+        svg.append("g")
+            .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
+            .append("path")
+            .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
+            .style({"fill":"black"});
+        //draw spin circle
+        container.append("circle")
+            .attr("cx", 0)
+            .attr("cy", 0)
+            .attr("r", 60)
+            .style({"fill":"white","cursor":"pointer"});
+        //spin text
+        container.append("text")
+            .attr("x", 0)
+            .attr("y", 15)
+            .attr("text-anchor", "middle")
+            .text("SPIN")
+            .style({"font-weight":"bold", "font-size":"30px"});
+        
+        
+        function rotTween(to) {
+          var i = d3.interpolate(oldrotation % 360, rotation);
+          return function(t) {
+            return "rotate(" + i(t) + ")";
+          };
+        }
+        
+        
+        function getRandomNumbers(){
+            var array = new Uint16Array(1000);
+            var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+            if(window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function"){
+                window.crypto.getRandomValues(array);
+                console.log("works");
+            } else {
+                //no support for crypto, get crappy random numbers
+                for(var i=0; i < 1000; i++){
+                    array[i] = Math.floor(Math.random() * 100000) + 1;
+                }
+            }
+            return array;
+        }
+   </script>
+    
+  </body>
 </html>
