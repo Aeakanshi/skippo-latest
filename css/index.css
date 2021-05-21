@@ -1,401 +1,221 @@
-html,body
-{
-	width: 100%;
-	height: auto;
-	font-family: sans-serif;
-	background-image: url("../images/a.jpg");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      
+    <title>Spin & Act</title>
 
-*
-{
-	padding: 0;
-	margin: 0;
-	border: 0;
-	outline: 0;
-	box-shadow: none;
-	border-spacing: 0;
-	box-sizing: border-box;
-}
+  <style type="text/css">
+    body {
+        background: #080808;
+        height: 900px;
+        width: 100%;
+    }
+ text{
+        font-family:Helvetica, Arial, sans-serif;
+        font-size:11px;
+        pointer-events:none;
+    }
+    #chart{
+        position: absolute;
+        width: 50%;
+        height: 500px;
+        top: 15%;
+        left: 35%;
+    }
+    #question{
+        position: absolute;
+        width: 34%;
+        height: 500px;
+        top: 10%;
+        right: 0;
+        /* left: 520px;*/
+    }
+    #question h1{
+        font-size: 42px;
+        font-weight: normal;
+        font-family: "sans-serif", Helvetica, Arial;
+        position: absolute;
+        color: orange;
+        padding: 0;
+        margin: 0;
+        right: 1em;
+        top:50%;
+        /*-webkit-transform:translate(0,-50%);
+                transform:translate(0,-50%);*/
+    }  
+      
+  </style>
 
-input[type=submit] {
-	cursor: pointer;
-}
+  </head>
+  
+  <body>
+    <div id="home" class="main-area">    
+      <div class="container"> 
+       <div id="chart"></div>
+    <div id="question"><h1></h1></div>
+    
+    
 
-/*-------------Header-container-------------*/
-#message {
-	display: none;
-	padding: .5em 1em;
-	background: #000;
-	color: white;
-	text-align: center;
-	border-bottom: solid 1px #333;
-	font-size: 18px;
-	-webkit-animation: fadein 1s;
-  -moz-animation: fadein 1s;
-  -ms-animation: fadein 1s;
-  -o-animation: fadein 1s;
-  animation: fadein 1s;
-
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-#header-container
-{
-	margin-bottom: 1em;
-}
-
-#header
-{
-	width: 80%;
-	height: 80%;
-	margin: 0 auto;
-	color: white;
-	/*background-image: url("../images/a.jpg");*/
-	position: relative;
-}
-
-#header div
-{
-	margin-bottom: 1em;
-}
-
-#header-container:after
-{
-	content: "";
-	display: block;
-	clear: both;
-	visibility: hidden;
-}
-
-#site-logo
-{
-	width: 100%;
-	border-bottom: 2px solid #303031;
-	padding: 0.2em;
-	font-size: 2em;
-	font-weight: bold;
-	font-style: italic;
-}
-
-#site-logo img {
-	width: 200px;
-}
-
-#site-caption
-{
-	width: 65%;
-	float: left;
-	padding-top: 5em;
-}
-
-#site-caption h1
-{
-	font-size: 3em;
-}
-
-#site-caption h2
-{
-	font-size: 1.2em;
-	font-weight: normal;
-	padding: 1em 0 0 1em;
-}
-
-#sign-in
-{
-	width: 35%;
-	float: left;
-	background-color: #42528c;
-	padding: 1em;
-	border-radius: 0.5em;
-}
-
-#input-title
-{
-	font-size: 1.3em;
-	text-align: center;
-}
-
-#sign-in input
-{
-	width: 100%;
-	padding: 0.5em 1em;
-	border-radius: 0.5em;
-	margin-bottom: 1em;
-	font-size: 1.2em;
-}
-
-
-#gform input:last-child
-{
-	background-color: #4a90e2;
-	color: white;
-}
-
-#sign-in div
-{
-	margin: 1em;
-}
-
-/*-----------------Content---------------*/
-#content-wrapper
-{
-	background-color: white;
-}
-
-#content
-{
-	width: 80%;
-	margin: 0 auto;
-}
-
-/*--------------#site-intro------------*/
-#site-intro
-{
-	text-align: center;
-	padding: 1em 0;
-}
-
-#site-intro h1
-{
-	padding-bottom: 1em;
-	font-size: 2.5em;
-}
-
-#site-intro p
-{
-	color: #626262;
-	font-size: 1.8em;
-	padding-bottom: 1em;
-	line-height: 2em;
-}
-
-/*----------------#site-features---------------*/
-#site-features
-{
-	background-color: #3f4f88;
-	color: white;
-	text-align: center;
-	padding: 5em 0;
-}
-
-#site-features:after
-{
-	content: "";
-	display: block;
-	clear: both;
-	visibility: hidden;
-}
-
-#wrapper
-{
-	width: 80%;
-	margin: 0 auto;
-}
-
-#wrapper h1
-{
-	font-size: 2.5em;
-}
-
-.feature-types
-{
-	width: 25%;
-	float: left;
-}
-
-.symbol
-{
-	font-size: 5em;
-	padding-bottom: 1em;
-	padding-top: 2em;
-}
-
-.symbol-heading
-{
-	font-size: 2em;
-	padding-bottom: 2em;
-}
-
-/*--------------user benefits--------------*/
-#user-benefits
-{
-	background-color: white;
-}
-
-#advantage-wrapper
-{
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
-	padding: 3em 0;
-}
-
-#advantage-wrapper h1,span
-{
-	padding-bottom: 1em;
-}
-
-#advantage-wrapper h1
-{
-	font-size: 2.5em;
-}
-
-#advantage-wrapper span
-{
-	font-size: 1.2em;
-	color: #9f9f9f;
-	display: inline-block;
-	margin-bottom: 3em;
-}
-
-#advantage-wrapper p
-{
-	text-align: left;
-	font-size: 2em;
-	color: #4c4c4c;
-	padding-bottom: 1em;
-	padding-left: 1em;
-	position: relative;
-}
-
-#advantage-wrapper i
-{
-	color: #42c0fb;
-	position: absolute;
-	left: 0;
-	font-weight: bold;
-}
-
-/*---------------contact now----------------*/
-#contact-now {
-	background: black;
-	background-image: url(../images/b.jpg);
-	background-size: cover;
-	background-attachment: fixed;
-}
-
-#contact-wrapper
-{
-	width: 80%;
-	margin: 0 auto;
-	position: relative;
-	color: white;
-	text-align: center;
-}
-
-#contact-wrapper h1
-{
-	padding-top: 5em;
-	font-size: 2.5em;
-}
-#contact-wrapper span
-{
-	font-size: 2.5em;
-	color: #fff;
-	display: inline-block;
-	margin-bottom: 5em;
-	margin-top: 2em;
-}
-#contact-wrapper input
-{
-	margin-bottom: 5em;
-	padding: 1em 3em;
-	color: white;
-	font-size: 2em;
-	margin-top: 2em;
-	border-radius: 0.2em;
-	transition: all .5s linear;
-	background: #6681E3;
-	background: -webkit-linear-gradient(left, #324B97, #21A4E6);
-	background: -o-linear-gradient(left, #324B97, #21A4E6);
-	background: -moz-linear-gradient(left, #324B97, #21A4E6);
-	background: linear-gradient(left, #324B97, #21A4E6);
-}
-
-#contact-wrapper input:hover {
-	background: #6681E3;
-	background: -webkit-linear-gradient(right, #324B97, #21A4E6);
-	background: -o-linear-gradient(right, #324B97, #21A4E6);
-	background: -moz-linear-gradient(right, #324B97, #21A4E6);
-	background: linear-gradient(right, #324B97, #21A4E6);
-}
-
-
-/*---------------call me--------------*/
-#call-me
-{
-	background-color: white;
-}
-
-#call-wrapper
-{
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
-	padding: 5em 0;
-}
-
-#call-wrapper span
-{
-	display: block;
-}
-
-#call-wrapper span:first-child
-{
-	font-size: 2.5em;
-	color: #4a4a4a;
-}
-
-#call-wrapper span:last-child
-{
-	font-size: 1.2em;
-	color: #4a4a4a;
-}
-
-
-/* loader styles */
-
-#loader {
-	width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-	display: none;
-	background-color: rgba(255,255,255,0.5);
-}
-
-#loader-gif {
-		color: white;
-    text-align: center;
-    vertical-align: middle;
-    display: block;
-    margin-top: 20%;
-}
+      </div>             
+    </div>
+   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+   <script type="text/javascript">
+     var padding = {top:20, right:40, bottom:0, left:0},
+            w = 500 - padding.left - padding.right,
+            h = 500 - padding.top  - padding.bottom,
+            r = Math.min(w, h)/2,
+            rotation = 0,
+            oldrotation = 0,
+            picked = 100000,
+            oldpick = [],
+            color = d3.scale.category20();//category20c()
+            //randomNumbers = getRandomNumbers();
+        //http://osric.com/bingo-card-generator/?title=HTML+and+CSS+BINGO!&words=padding%2Cfont-family%2Ccolor%2Cfont-weight%2Cfont-size%2Cbackground-color%2Cnesting%2Cbottom%2Csans-serif%2Cperiod%2Cpound+sign%2C%EF%B9%A4body%EF%B9%A5%2C%EF%B9%A4ul%EF%B9%A5%2C%EF%B9%A4h1%EF%B9%A5%2Cmargin%2C%3C++%3E%2C{+}%2C%EF%B9%A4p%EF%B9%A5%2C%EF%B9%A4!DOCTYPE+html%EF%B9%A5%2C%EF%B9%A4head%EF%B9%A5%2Ccolon%2C%EF%B9%A4style%EF%B9%A5%2C.html%2CHTML%2CCSS%2CJavaScript%2Cborder&freespace=true&freespaceValue=Web+Design+Master&freespaceRandom=false&width=5&height=5&number=35#results
+        var data = [
+                    {"label":"",  "value":1,  "question":"Kajra Re, Kajra Re"}, // padding
+                    {"label":"",  "value":2,  "question":"Sing Haryanvi song"}, //font-family
+                    {"label":"",  "value":3,  "question":"Shayari"}, //color
+                    {"label":"",  "value":4,  "question":"Mimicry"}, //font-weight
+                    {"label":"",  "value":5,  "question":"Hindi Varnmala"}, //font-size
+                    {"label":"",  "value":6,  "question":"Sing a sad song with a laughing face."}, //background-color
+                    {"label":"",  "value":7,  "question":"Sanskrit shlok with hindi meaning"}, //nesting
+                    {"label":"",  "value":8,  "question":"Tell a PJ"}, //bottom
+                    {"label":"",  "value":9,  "question":"You Are Lucky"}, //sans-serif
+                    {"label":"", "value":10, "question":"Fill your mouth with water and sing a song."},
+                    {"label":"",  "value":11,  "question":"Try to lick your elbow while singing an alphabet"}, // padding
+                    {"label":"",  "value":12,  "question":"Movie dialog"}, //font-family
+                    {"label":"",  "value":13,  "question":"Translate these dialoude in English:1-जली को आग कहते हैं, बुझी को राख कहते हैं, जिस राख से बारूद बने, उसे विश्वनाथ करते हैं। /  2-एक चुटकी सिंदूर की कीमत तुम क्या जानो रमेश बाबू…ईश्वर का आशीर्वाद होता है, एक चुटकी सिंदूर…सुहागन के सर का ताज होता है, एक चुटकी सिंदूर…हर औरत का ख्वाब होता है. एक चुटकी सिंदूर…"},
+                    {"label":"",  "value":14,  "question":"Get a spoon in your mouth and Give your introduction"} //font-weight
+                
+        ];
+        var svg = d3.select('#chart')
+            .append("svg")
+            .data([data])
+            .attr("width",  w + padding.left + padding.right)
+            .attr("height", h + padding.top + padding.bottom);
+        var container = svg.append("g")
+            .attr("class", "chartholder")
+            .attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
+        var vis = container
+            .append("g");
+            
+        var pie = d3.layout.pie().sort(null).value(function(d){return 1;});
+        // declare an arc generator function
+        var arc = d3.svg.arc().outerRadius(r);
+        // select paths, use arc generator to draw
+        var arcs = vis.selectAll("g.slice")
+            .data(pie)
+            .enter()
+            .append("g")
+            .attr("class", "slice");
+            
+        arcs.append("path")
+            .attr("fill", function(d, i){ return color(i); })
+            .attr("d", function (d) { return arc(d); });
+        // add the text
+        arcs.append("text").attr("transform", function(d){
+                d.innerRadius = 0;
+                d.outerRadius = r;
+                d.angle = (d.startAngle + d.endAngle)/2;
+                return "rotate(" + (d.angle * 180 / Math.PI - 90) + ")translate(" + (d.outerRadius -14) +")";
+            })
+            .attr("text-anchor", "end")
+            .text( function(d, i) {
+                return data[i].label;
+            });
+        container.on("click", spin);
+        function spin(d){
+            
+            container.on("click", null);
+            //all slices have been seen, all done
+            console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
+            if(oldpick.length == data.length){
+                console.log("done");
+                container.on("click", null);
+                return;
+            }
+            var  ps       = 360/data.length,
+                 pieslice = Math.round(1440/data.length),
+                 rng      = Math.floor((Math.random() * 1440) + 360);
+                
+            rotation = (Math.round(rng / ps) * ps);
+            
+            picked = Math.round(data.length - (rotation % 360)/ps);
+            picked = picked >= data.length ? (picked % data.length) : picked;
+            if(oldpick.indexOf(picked) !== -1){
+                d3.select(this).call(spin);
+                return;
+            } else {
+                oldpick.push(picked);
+            }
+            rotation += 90 - Math.round(ps/2);
+            vis.transition()
+                .duration(3000)
+                .attrTween("transform", rotTween)
+                .each("end", function(){
+                    //mark question as seen
+                    d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                        .attr("fill", "#111");
+                    //populate question
+                    d3.select("#question h1")
+                        .text(data[picked].question);
+                    oldrotation = rotation;
+              
+                    /* Get the result value from object "data" */
+                    console.log(data[picked].value)
+              
+                    /* Comment the below line for restrict spin to sngle time */
+                    container.on("click", spin);
+                });
+        }
+        //make arrow
+        svg.append("g")
+            .attr("transform", "translate(" + (w + padding.left + padding.right) + "," + ((h/2)+padding.top) + ")")
+            .append("path")
+            .attr("d", "M-" + (r*.15) + ",0L0," + (r*.05) + "L0,-" + (r*.05) + "Z")
+            .style({"fill":"black"});
+        //draw spin circle
+        container.append("circle")
+            .attr("cx", 0)
+            .attr("cy", 0)
+            .attr("r", 60)
+            .style({"fill":"white","cursor":"pointer"});
+        //spin text
+        container.append("text")
+            .attr("x", 0)
+            .attr("y", 15)
+            .attr("text-anchor", "middle")
+            .text("SPIN")
+            .style({"font-weight":"bold", "font-size":"30px"});
+        
+        
+        function rotTween(to) {
+          var i = d3.interpolate(oldrotation % 360, rotation);
+          return function(t) {
+            return "rotate(" + i(t) + ")";
+          };
+        }
+        
+        
+        function getRandomNumbers(){
+            var array = new Uint16Array(1000);
+            var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+            if(window.hasOwnProperty("crypto") && typeof window.crypto.getRandomValues === "function"){
+                window.crypto.getRandomValues(array);
+                console.log("works");
+            } else {
+                //no support for crypto, get crappy random numbers
+                for(var i=0; i < 1000; i++){
+                    array[i] = Math.floor(Math.random() * 100000) + 1;
+                }
+            }
+            return array;
+        }
+   </script>
+    
+  </body>
+</html>
